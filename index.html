@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamik Web Ödevi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title  text-center">Create A Component</h3>
+                    </div>
+
+                    <div class="card-body text-center">
+                        <h5 class="mb-2 ">Select Component</h5>
+                        <select class="form-control text-center bg-light" onchange="select()" id="selectComponent">
+                            <option value="">- Select Component -</option>
+                            <option value="Button">Button</option>
+                            <option value="Div">Div</option>
+                            <option value="Link">Link</option>
+                            <option value="P">Paragraf</option>
+                            <option value="Header">Header</option>
+                            <option value="Image">Image</option>
+                            <option value="Input">Input</option>
+                        </select>
+
+                        <h5 class="mt-4 mb-1">Select Component Id</h5>
+                        <select class="form-control text-center" id="componentId"></select>
+
+                        <h5 for="addId" class="mt-3 mb-1">Add Id</h5>
+                        <input type="text" name="" id="addId" placeholder="Add Id"
+                            class="form-control mb-2 text-center">
+
+                        <h5 for="addClass" class="mt-3">Add Class</h5>
+                        <input type="text" name="" id="addClass" placeholder="Add Class"
+                            class="form-control mb-2 text-center">
+                    </div>
+                </div>
+
+                <!-- component attributes start -->
+                <div class="card mt-3" id="componentAttributes">
+                    <div id="inputAttributes">
+                        <div class="card-header bg-primary text-center mb-3 text-white">
+                            <h4>Add Input</h4>
+                        </div>
+                        <div class="p-3">
+                            <label for="addInputType">
+                                <h5>Select The Input Type</h5>
+                            </label>
+                            <select class="form-control text-center" onchange="selectInputType()" id="addInputType">
+                                <option value="">- Input Type -</option>
+                                <option value="button">Button</option>
+                                <option value="text">Text</option>
+                                <option value="datetime-local">Datetime-Local</option>
+                                <option value="color">Color</option>
+                                <option value="email">Email</option>
+                                <option value="file">File</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="divAttributes">
+                        <div class="card-header bg-primary text-center mb-3 text-white">
+                            <h4>Add Div</h4>
+                        </div>
+                    </div>
+
+                    <div id="headerAttributes">
+                        <div class="card-header bg-primary text-center mb-3 text-white">
+                            <h4>Add Header</h4>
+                        </div>
+                        <div class="p-3">
+                            <label for="headerNumber">
+                                <h5>Header Number?</h5>
+                            </label><br>
+                            <select id="headerNumber" class="form-control ">
+                                <option value="h1">Header 1</option>
+                                <option value="h2">Header 2</option>
+                                <option value="h3">Header 3</option>
+                                <option value="h4">Header 4</option>
+                                <option value="h5">Header 5</option>
+                                <option value="h6">Header 6</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="linkAttributes">
+                        <div class="card-header bg-primary text-center mb-3 text-white">
+                            <h4>Add Link</h4>
+                        </div>
+                        <div class="p-3">
+                            <label for="addLink">
+                                <h5>Enter The URL</h5>
+                            </label>
+                            <input type="text" id="addLink" class="form-control mb-2">
+                            <label for="">
+                                <h5>Open in new tab?</h5>
+                            </label>
+                            <select class="form-control" id="linkTarget">
+                                <option value="_blank">Yes</option>
+                                <option value="">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="textAttributes">
+                        <div class="p-3">
+                            <label for="textColor">
+                                <h5>Add Text</h5>
+                            </label>
+                            <input type="text" placeholder="Text" id="text" class="form-control mb-3">
+                        </div>
+                    </div>
+
+                    <div id="textColorAttributes">
+                        <div class="p-3">
+                            <label for="textColor">
+                                <h5>Select A Text Color</h5>
+                            </label>
+                            <select class="form-control mb-3" id="textColor">
+                                <option value="">- Text Color -</option>
+                                <option value="text-danger" class="bg-danger">Danger</option>
+                                <option value="text-warning" class="bg-warning">Warning</option>
+                                <option value="text-primary" class="bg-primary">Primary</option>
+                                <option value="text-success" class="bg-success">Success</option>
+                                <option value="text-dark" class="bg-dark text-bg-info">Dark</option>
+                                <option value="text-secondary" class="bg-secondary">Secondary</option>
+                                <option value="text-info" class="bg-info">Info</option>
+                                <option value="">None</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="bgAttributes">
+                        <div class="p-3">
+                            <label for="bgColor">
+                                <h5>Select A Background Color</h5>
+                            </label>
+                            <select class="form-control mb-3" id="bgColor">
+                                <option value="">- Background Color -</option>
+                                <option value="bg-danger" class="bg-danger">Danger</option>
+                                <option value="bg-warning" class="bg-warning">Warning</option>
+                                <option value="bg-primary" class="bg-primary">Primary</option>
+                                <option value="bg-success" class="bg-success">Success</option>
+                                <option value="bg-dark" class="bg-dark text-bg-info">Dark</option>
+                                <option value="bg-secondary" class="bg-secondary">Secondary</option>
+                                <option value="bg-info" class="bg-info">Info</option>
+                                <option value="">None</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="buttonSizeAttributes">
+                        <div class="p-3">
+                            <label for="buttonSize">
+                                <h5>Button Size?</h5>
+                            </label>
+                            <select class="form-control mb-3 text-center" id="buttonSize">
+                                <option>- Button Size -</option>
+                                <option value="btn-sm">Small</option>
+                                <option value="btn-lg">Large</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="imageAttributes">
+                        <div class="card-header bg-primary text-center mb-3 text-white">
+                            <h4>Add Image</h4>
+                        </div>
+                        <div class="p-3">
+
+                            <label for="addImageSource">
+                                <h5>URL Of The Image</h5>
+                            </label><br>
+                            <input type="text" id="addImageSource" class="form-control mb-2">
+                        </div>
+                    </div>
+                </div>
+                <!-- component attributes end -->
+
+                <div class="card-footer mt-2">
+                    <button class="btn btn-primary btn-lg form-control" onclick="create()">Create</button>
+                </div>
+            </div>
+            <div class="col-8" id="component"></div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
