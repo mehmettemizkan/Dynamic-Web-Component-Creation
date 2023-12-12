@@ -1,7 +1,7 @@
 # Dynamic Web Component Creation
 
 ## Demo
-https://mehmettemizkan.github.io/html-content-creator/
+https://mehmettemizkan.github.io/Dynamic-Web-Component-Creation/
 
 ## Overview
 
